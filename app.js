@@ -11,20 +11,21 @@ fetch("https://randomuser.me/api/")
         console.log(data);
 
         box.classList.add("BOX");
-
-        let image = data.results[0].picture.large;
-        let title = data.results[0].name.title;
-        let firstName = data.results[0].name.first;
-        let lastName = data.results[0].name.last;
-        let username = data.results[0].login.username;
-        let gender = data.results[0].gender;
-        let email = data.results[0].email;
-        let phone = data.results[0].phone;
-        let city = data.results[0].location.city;
-        let state = data.results[0].location.state;
-        let postcode = data.results[0].location.postcode;
-        let CNcode = data.results[0].nat;
-        let country = data.results[0].location.country;
+        let results = data.results[0];
+        
+        let image = results.picture.large;
+        let title = results.name.title;
+        let firstName = results.name.first;
+        let lastName = results.name.last;
+        let username = results.login.username;
+        let gender = results.gender;
+        let email = results.email;
+        let phone = results.phone;
+        let city = results.location.city;
+        let state = results.location.state;
+        let postcode = results.location.postcode;
+        let CNcode = results.nat;
+        let country = results.location.country;
 
 
         // console.log(title);
