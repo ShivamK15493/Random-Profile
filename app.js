@@ -1,14 +1,21 @@
 
 let box = document.querySelector(".container");
 let btn = document.querySelector("button");
-console.log(box);
+// console.log(box);
+
 
 fetch("https://randomuser.me/api/")
 .then((res) => {
         return res.json();
     })
 .then((data) => {
-        console.log(data);
+
+
+
+        if(!data) {
+            throw new Error("Data not found");
+  
+        }
 
         box.classList.add("BOX");
         let results = data.results[0];
@@ -50,7 +57,14 @@ fetch("https://randomuser.me/api/")
     <b>Country:</b> ${country} <br>
 
     `;
+})
+.catch((err) =>{
+
+    console.log("Error :",err);
+    box.append("Error! Resource not found");
+    
 });
+
 
 btn.addEventListener("click", function(){
 
