@@ -3,6 +3,7 @@ let box = document.querySelector(".container");
 let btn = document.querySelector("button");
 // console.log(box);
 
+let getRandomUser = () => {
 
 fetch("https://randomuser.me/api/")
 .then((res) => {
@@ -65,8 +66,12 @@ fetch("https://randomuser.me/api/")
     
 });
 
+}
+
+getRandomUser();
+
 
 btn.addEventListener("click", function(){
 
-    location.reload();
+    getRandomUser();
 })
